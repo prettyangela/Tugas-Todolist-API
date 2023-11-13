@@ -36,133 +36,164 @@ Todo List API Services using Express JS
 
 ## API Documentation
 
-Task
+## API Documentation
 
-<!-- Create Task -->
+https://documenter.getpostman.com/view/2575881/2s946icWrY
 
-Request:
+### Task
+
+#### Create Task
+
+##### Request
+
+```http
 POST /api/v1/tasks
+```
 
-Body:
+##### Body
+
+```json
 {
-"description": "Description 1",
-"status": "active"
+  "description": "Description 1",
+  "status": "active"
 }
+```
 
-Response:
+##### Response
+
+```json
 {
-"code": 201,
-"success": true,
-"message": "Task created successfully",
-"data": {
-"task": {
-"\_id": "5f9b0b7b7f0b9b0017f0b9b0",
-"status": "active",
-"description": "Description 1",
-"createdAt": "2023-07-19T15:08:27.000Z",
-"updatedAt": "2023-07-19T15:08:27.000Z",
-"\_\_v": 0
+  "code": 201,
+  "success": true,
+  "message": "Task created successfully",
+  "data": {
+    "task": {
+      "_id": "5f9b0b7b7f0b9b0017f0b9b0",
+      "status": "active",
+      "description": "Description 1",
+      "createdAt": "2023-07-19T15:08:27.000Z",
+      "updatedAt": "2023-07-19T15:08:27.000Z",
+      "__v": 0
+    }
+  }
 }
-}
-}
+```
 
-<!-- Get All Tasks with filters -->
+#### Get All Tasks with filters
 
-Request
+##### Request
 
+```http
 GET /api/v1/tasks?status=active
+```
 
-Response
+##### Response
 
+```json
 {
-"code": 200,
-"success": true,
-"message": "Tasks retrieved successfully",
-"data": {
-"tasks": [
-{
-"_id": "5f9b0b7b7f0b9b0017f0b9b0",
-"status": "active",
-"description": "Description 1",
-"createdAt": "2023-07-19T15:08:27.000Z",
-"updatedAt": "2023-07-19T15:08:27.000Z",
-"__v": 0
+  "code": 200,
+  "success": true,
+  "message": "Tasks retrieved successfully",
+  "data": {
+    "tasks": [
+      {
+        "_id": "5f9b0b7b7f0b9b0017f0b9b0",
+        "status": "active",
+        "description": "Description 1",
+        "createdAt": "2023-07-19T15:08:27.000Z",
+        "updatedAt": "2023-07-19T15:08:27.000Z",
+        "__v": 0
+      }
+    ]
+  },
+  "meta": {
+    "total_filtered": 1
+  }
 }
-]
-},
-"meta": {
-"total_filtered": 1
-}
-}
+```
 
-<!-- Get Task By Id -->
+#### Get Task By Id
 
-Request
+##### Request
 
+```http
 GET /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
+```
 
-Response
+##### Response
 
+```json
 {
-"code": 200,
-"success": true,
-"message": "Task retrieved successfully",
-"data": {
-"task": {
-"\_id": "5f9b0b7b7f0b9b0017f0b9b0",
-"status": "active",
-"description": "Description 1",
-"createdAt": "2023-07-19T15:08:27.000Z",
-"updatedAt": "2023-07-19T15:08:27.000Z",
-"\_\_v": 0
+  "code": 200,
+  "success": true,
+  "message": "Task retrieved successfully",
+  "data": {
+    "task": {
+      "_id": "5f9b0b7b7f0b9b0017f0b9b0",
+      "status": "active",
+      "description": "Description 1",
+      "createdAt": "2023-07-19T15:08:27.000Z",
+      "updatedAt": "2023-07-19T15:08:27.000Z",
+      "__v": 0
+    }
+  }
 }
-}
-}
+```
 
-<!-- Update Task -->
+#### Update Task
 
-Request
+##### Request
 
+```http
 PUT /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
+```
 
-Body
+##### Body
 
+```json
 {
-"description": "Description 1",
-"status": "active"
+  "description": "Description 1",
+  "status": "active"
 }
+```
 
-Response
+##### Response
 
+```json
 {
-"code": 200,
-"success": true,
-"message": "Task updated successfully",
-"data": {
-"task": {
-"\_id": "5f9b0b7b7f0b9b0017f0b9b0",
-"status": "active",
-"description": "Description 1",
-"createdAt": "2023-07-19T15:08:27.000Z",
-"updatedAt": "2023-07-19T15:08:27.000Z",
-"\_\_v": 0
+  "code": 200,
+  "success": true,
+  "message": "Task updated successfully",
+  "data": {
+    "task": {
+      "_id": "5f9b0b7b7f0b9b0017f0b9b0",
+      "status": "active",
+      "description": "Description 1",
+      "createdAt": "2023-07-19T15:08:27.000Z",
+      "updatedAt": "2023-07-19T15:08:27.000Z",
+      "__v": 0
+    }
+  }
 }
-}
-}
+```
 
-<!-- Delete Task -->
+#### Delete Task
 
-Request
+##### Request
 
+```http
 DELETE /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
+```
 
-Response
+##### Response
 
+```json
 {
-"code": 200,
-"success": true,
-"message": "Task deleted successfully"
+  "code": 200,
+  "success": true,
+  "message": "Task deleted successfully"
 }
+```
 
 ## Author
 
