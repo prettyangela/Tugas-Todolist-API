@@ -36,55 +36,21 @@ Todo List API Services using Express JS
 
 ## API Documentation
 
-## API Documentation
-
-https://documenter.getpostman.com/view/2575881/2s946icWrY
-
-### Task
-
-#### Create Task
+#### Create Todo
 
 ##### Request
 
 ```http
-POST /api/v1/tasks
+POST /api/v1/todos
 ```
 
 ##### Body
 
 ```json
 {
-  "description": "Description 1",
-  "status": "active"
+  "title": "Belanja di Indomaret",
+  "description": "Beli sayur, beli buah, beli permen"
 }
-```
-
-##### Response
-
-```json
-{
-  "code": 201,
-  "success": true,
-  "message": "Task created successfully",
-  "data": {
-    "task": {
-      "_id": "5f9b0b7b7f0b9b0017f0b9b0",
-      "status": "active",
-      "description": "Description 1",
-      "createdAt": "2023-07-19T15:08:27.000Z",
-      "updatedAt": "2023-07-19T15:08:27.000Z",
-      "__v": 0
-    }
-  }
-}
-```
-
-#### Get All Tasks with filters
-
-##### Request
-
-```http
-GET /api/v1/tasks?status=active
 ```
 
 ##### Response
@@ -93,67 +59,36 @@ GET /api/v1/tasks?status=active
 {
   "code": 200,
   "success": true,
-  "message": "Tasks retrieved successfully",
+  "message": "Todo create successfully",
   "data": {
-    "tasks": [
-      {
-        "_id": "5f9b0b7b7f0b9b0017f0b9b0",
-        "status": "active",
-        "description": "Description 1",
-        "createdAt": "2023-07-19T15:08:27.000Z",
-        "updatedAt": "2023-07-19T15:08:27.000Z",
-        "__v": 0
-      }
-    ]
-  },
-  "meta": {
-    "total_filtered": 1
-  }
-}
-```
-
-#### Get Task By Id
-
-##### Request
-
-```http
-GET /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
-```
-
-##### Response
-
-```json
-{
-  "code": 200,
-  "success": true,
-  "message": "Task retrieved successfully",
-  "data": {
-    "task": {
-      "_id": "5f9b0b7b7f0b9b0017f0b9b0",
-      "status": "active",
-      "description": "Description 1",
-      "createdAt": "2023-07-19T15:08:27.000Z",
-      "updatedAt": "2023-07-19T15:08:27.000Z",
+    "todo": {
+      "title": "belanja di indomaret",
+      "description": "Beli sayur, beli buah, beli permen",
+      "completed": false,
+      "_id": "65524b9131cb49a167994a5c",
+      "createdAt": "2023-11-13T16:15:13.486Z",
+      "updatedAt": "2023-11-13T16:15:13.486Z",
       "__v": 0
     }
   }
 }
 ```
 
-#### Update Task
+#### Update Todo
 
 ##### Request
 
 ```http
-PUT /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
+PATCH /api/v1/todos/65524b9131cb49a167994a5c
 ```
 
 ##### Body
 
 ```json
 {
-  "description": "Description 1",
-  "status": "active"
+  "title": "Belanja di Indomaret",
+  "description": "Beli sayur, beli buah, beli permen",
+  "completed": true
 }
 ```
 
@@ -163,26 +98,27 @@ PUT /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
 {
   "code": 200,
   "success": true,
-  "message": "Task updated successfully",
+  "message": "Todo updated successfully",
   "data": {
-    "task": {
-      "_id": "5f9b0b7b7f0b9b0017f0b9b0",
-      "status": "active",
-      "description": "Description 1",
-      "createdAt": "2023-07-19T15:08:27.000Z",
-      "updatedAt": "2023-07-19T15:08:27.000Z",
+    "todo": {
+      "_id": "65524b9131cb49a167994a5c",
+      "title": "belanja di indomaret",
+      "description": "Beli Indomie",
+      "completed": true,
+      "createdAt": "2023-11-13T16:15:13.486Z",
+      "updatedAt": "2023-11-13T16:18:47.648Z",
       "__v": 0
     }
   }
 }
 ```
 
-#### Delete Task
+#### Delete Todo
 
 ##### Request
 
 ```http
-DELETE /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
+DELETE /api/v1/todos/65524b9131cb49a167994a5c
 ```
 
 ##### Response
@@ -191,7 +127,25 @@ DELETE /api/v1/tasks/5f9b0b7b7f0b9b0017f0b9b0
 {
   "code": 200,
   "success": true,
-  "message": "Task deleted successfully"
+  "message": "Todo Deleted successfully"
+}
+```
+
+#### Delete All Todo
+
+##### Request
+
+```http
+DELETE /api/v1/todos
+```
+
+##### Response
+
+```json
+{
+  "code": 200,
+  "success": true,
+  "message": "Todo Deleted all successfully"
 }
 ```
 
