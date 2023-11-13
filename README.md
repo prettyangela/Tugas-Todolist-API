@@ -87,7 +87,7 @@ PATCH /api/v1/todos/65524b9131cb49a167994a5c
 ```json
 {
   "title": "Belanja di Indomaret",
-  "description": "Beli Indomide",
+  "description": "Beli Indomie",
   "completed": true
 }
 ```
